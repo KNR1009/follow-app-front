@@ -9,3 +9,9 @@ export type SignUpUser = {
   password: string;
   password_confirmation: string;
 };
+
+export type HeaderInfo = {
+  accessToken: string;
+  client: string;
+  uid: string;
+};

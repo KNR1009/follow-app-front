@@ -44,13 +44,20 @@ export default function SignInSide() {
   ) => {
     setState(e.target.value);
   };
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const params = {
       email: email,
       password: password,
     };
-    fetchSignIn(params);
+    const SignIn = async () => {
+      try {
+        const result = await fetchSignIn(params);
+      } catch (e) {
+        console.log(e);
+      }
+    };
+    SignIn();
   };
 
   return (
