@@ -12,6 +12,7 @@ import Grid from "@mui/material/Grid";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { fetchSignIn } from "../../pages/api/auth";
 
 function Copyright(props: any) {
   return (
@@ -34,13 +35,22 @@ function Copyright(props: any) {
 const theme = createTheme();
 
 export default function SignInSide() {
+  const [email, setEmail] = React.useState<string>("");
+  const [password, setPassword] = React.useState<string>("");
+
+  const onChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+    setState: React.Dispatch<React.SetStateAction<string>>
+  ) => {
+    setState(e.target.value);
+  };
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get("email"),
-      password: data.get("password"),
-    });
+    const params = {
+      email: email,
+      password: password,
+    };
+    fetchSignIn(params);
   };
 
   return (
@@ -94,6 +104,9 @@ export default function SignInSide() {
                 name="email"
                 autoComplete="email"
                 autoFocus
+                onChange={(e) => {
+                  onChange(e, setEmail);
+                }}
               />
               <TextField
                 margin="normal"
@@ -104,6 +117,9 @@ export default function SignInSide() {
                 type="password"
                 id="password"
                 autoComplete="current-password"
+                onChange={(e) => {
+                  onChange(e, setPassword);
+                }}
               />
               <Button
                 type="submit"
