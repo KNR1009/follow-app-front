@@ -67,6 +67,81 @@ export const Home: React.FC = () => {
                   {/* TODO: 自分自身の場合は「プロフィールを編集にラベルを変更する」 */}
                   <PrimaryButton label="Follow" onClick={() => {}} />
                 </div>
+                <div className="posts-container">
+                  <div className="post">
+                    <Image
+                      src="/icon01.jpeg"
+                      alt="プロフィール画像"
+                      width={92}
+                      height={92}
+                    />
+                  </div>
+                  <div className="post">
+                    <Image
+                      src="/icon01.jpeg"
+                      alt="プロフィール画像"
+                      width={92}
+                      height={92}
+                    />
+                  </div>
+                  <div className="post">
+                    <Image
+                      src="/icon01.jpeg"
+                      alt="プロフィール画像"
+                      width={92}
+                      height={92}
+                    />
+                  </div>
+                  <div className="post">
+                    <Image
+                      src="/icon01.jpeg"
+                      alt="プロフィール画像"
+                      width={92}
+                      height={92}
+                    />
+                  </div>
+                  <div className="post">
+                    <Image
+                      src="/icon01.jpeg"
+                      alt="プロフィール画像"
+                      width={92}
+                      height={92}
+                    />
+                  </div>
+
+                  <div className="post">
+                    <Image
+                      src="/icon01.jpeg"
+                      alt="プロフィール画像"
+                      width={92}
+                      height={92}
+                    />
+                  </div>
+                  <div className="post">
+                    <Image
+                      src="/icon01.jpeg"
+                      alt="プロフィール画像"
+                      width={92}
+                      height={92}
+                    />
+                  </div>
+                  <div className="post">
+                    <Image
+                      src="/icon01.jpeg"
+                      alt="プロフィール画像"
+                      width={92}
+                      height={92}
+                    />
+                  </div>
+                  <div className="post">
+                    <Image
+                      src="/icon01.jpeg"
+                      alt="プロフィール画像"
+                      width={92}
+                      height={92}
+                    />
+                  </div>
+                </div>
               </div>
             </HomeContainer>
           </Layout>
@@ -116,5 +191,16 @@ const HomeContainer = styled.div`
   .button-container {
     width: 300px;
     margin: 24px auto 0 auto;
+  }
+  .posts-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 36px;
+  }
+  .post {
+    img {
+      border-radius: 8px;
+    }
   }
 `;
