@@ -48,6 +48,20 @@ export const Home: React.FC = () => {
                   <p className="profile-name">Mary Christian</p>
                   <p className="profile-text">San Francisco / music</p>
                 </div>
+                <div className="profile-user-info">
+                  <div className="info">
+                    <p className="num">150</p>
+                    <p className="label">posts</p>
+                  </div>
+                  <div className="info">
+                    <p className="num">32</p>
+                    <p className="label">followers</p>
+                  </div>
+                  <div className="info">
+                    <p className="num">310</p>
+                    <p className="label">following</p>
+                  </div>
+                </div>
               </div>
             </HomeContainer>
           </Layout>
@@ -77,6 +91,21 @@ const HomeContainer = styled.div`
   .profile-text {
     margin-top: 8px;
     font-weight: bold;
+    font-size: 12px;
+  }
+  .profile-user-info {
+    display: flex;
+    align-items: center;
+    margin-top: 24px;
+    text-align: center;
+    gap: 70px;
+    justify-content: space-around;
+  }
+  .num {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  .label {
     font-size: 12px;
   }
 `;
