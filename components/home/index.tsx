@@ -1,12 +1,37 @@
-import React from "react";
-import { useRecoilValue } from "recoil";
+import { useRouter } from "next/router";
+import React, { useEffect } from "react";
+import { useRecoilState } from "recoil";
 import { HeaderInfoState } from "../../lib/store";
-import HeaderMenu from "../menu/HeaderMenu";
+import { fetchSignOut } from "../../pages/api/auth";
+import { HeaderMenu } from "../menu/HeaderMenu";
 
 export const Home: React.FC = () => {
-  const Header = useRecoilValue(HeaderInfoState);
+  const router = useRouter();
 
+  const [Header, setHeader] = useRecoilState(HeaderInfoState);
+
+  // ログアウト
+  const logout = async () => {
+    const res = await fetchSignOut(Header);
+    setHeader({
+      accessToken: "",
+      client: "",
+      uid: "",
+    });
+    alert("ログアウト完了しました");
+  };
+  useEffect(() => {
+    if (Header.accessToken === "") {
+      router.push("/auth/signIn");
+    }
+  }, [Header.accessToken, router]);
   return (
-    <>{Header.accessToken ? <HeaderMenu /> : <p>ログインしていないです</p>}</>
+    <>
+      {Header.accessToken ? (
+        <HeaderMenu onClick={logout} />
+      ) : (
+        <p>ログインしていないです</p>
+      )}
+    </>
   );
 };
