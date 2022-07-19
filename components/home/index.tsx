@@ -7,6 +7,7 @@ import { Layout } from "../layout";
 import { HeaderMenu } from "../menu/HeaderMenu";
 import styled from "styled-components";
 import Image from "next/image";
+import { PrimaryButton } from "../button";
 
 export const Home: React.FC = () => {
   const router = useRouter();
@@ -61,6 +62,9 @@ export const Home: React.FC = () => {
                     <p className="num">310</p>
                     <p className="label">following</p>
                   </div>
+                </div>
+                <div className="button-container">
+                  <PrimaryButton />
                 </div>
               </div>
             </HomeContainer>
