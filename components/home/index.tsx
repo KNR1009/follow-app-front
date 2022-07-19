@@ -64,7 +64,8 @@ export const Home: React.FC = () => {
                   </div>
                 </div>
                 <div className="button-container">
-                  <PrimaryButton />
+                  {/* TODO: 自分自身の場合は「プロフィールを編集にラベルを変更する」 */}
+                  <PrimaryButton label="Follow" onClick={() => {}} />
                 </div>
               </div>
             </HomeContainer>
@@ -111,5 +112,9 @@ const HomeContainer = styled.div`
   }
   .label {
     font-size: 12px;
+  }
+  .button-container {
+    width: 300px;
+    margin: 24px auto 0 auto;
   }
 `;
