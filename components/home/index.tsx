@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import { useRecoilState } from "recoil";
 import { HeaderInfoState } from "../../lib/store";
 import { fetchSignOut } from "../../pages/api/auth";
+import { Layout } from "../layout";
 import { HeaderMenu } from "../menu/HeaderMenu";
 
 export const Home: React.FC = () => {
@@ -28,7 +29,10 @@ export const Home: React.FC = () => {
   return (
     <>
       {Header.accessToken ? (
-        <HeaderMenu onClick={logout} />
+        <>
+          <HeaderMenu onClick={logout} />
+          <Layout>テスト</Layout>
+        </>
       ) : (
         <p>ログインしていないです</p>
       )}
