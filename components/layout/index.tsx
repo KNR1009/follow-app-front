@@ -10,6 +10,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
 };
 
 const LayoutContainer = styled.div`
+  width: 100%;
   padding: 40px;
   height: 100vh;
   background-color: #000000;

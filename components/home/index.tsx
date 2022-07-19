@@ -5,6 +5,8 @@ import { HeaderInfoState } from "../../lib/store";
 import { fetchSignOut } from "../../pages/api/auth";
 import { Layout } from "../layout";
 import { HeaderMenu } from "../menu/HeaderMenu";
+import styled from "styled-components";
+import Image from "next/image";
 
 export const Home: React.FC = () => {
   const router = useRouter();
@@ -31,7 +33,24 @@ export const Home: React.FC = () => {
       {Header.accessToken ? (
         <>
           <HeaderMenu onClick={logout} />
-          <Layout>テスト</Layout>
+          <Layout>
+            <HomeContainer>
+              <div className="profile-container">
+                <div className="profile-icon">
+                  <Image
+                    src="/icon01.jpeg"
+                    alt="プロフィール画像"
+                    width={113}
+                    height={113}
+                  />
+                </div>
+                <div className="profile-description">
+                  <p className="profile-name">Mary Christian</p>
+                  <p className="profile-text">San Francisco / music</p>
+                </div>
+              </div>
+            </HomeContainer>
+          </Layout>
         </>
       ) : (
         <p>ログインしていないです</p>
@@ -39,3 +58,25 @@ export const Home: React.FC = () => {
     </>
   );
 };
+
+const HomeContainer = styled.div`
+  .profile-icon {
+    text-align: center;
+    img {
+      border-radius: 50%;
+    }
+  }
+  .profile-description {
+    text-align: center;
+    margin-top: 16px;
+  }
+  .profile-name {
+    font-weight: bold;
+    font-size: 24px;
+  }
+  .profile-text {
+    margin-top: 8px;
+    font-weight: bold;
+    font-size: 12px;
+  }
+`;

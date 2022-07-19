@@ -1,16 +1,123 @@
 html,
 body {
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+/* カレンダーのツールバー調整 */
+#myCalender .fc .fc-toolbar.fc-header-toolbar {
+  margin-bottom: 10px;
+}
+#myCalender .fc .fc-toolbar-title {
+  font-size: 18px;
+  color: #2d3c4b;
+}
+#myCalender .fc .fc-button-primary {
+  font-size: 15px;
+  padding: 3px 5px 4px;
+  background: none;
+  border: none;
+  color: #f0302f;
+  outline: none;
+}
+
+/* カレンダーから不要なボーダーなどを削除する */
+#myCalender .fc-theme-standard .fc-scrollgrid {
+  border: none;
+}
+#myCalender .fc-scrollgrid-section-header * {
+  background: none;
+}
+#myCalender .fc-theme-standard th {
+  border: none;
+}
+#myCalender .fc .fc-scrollgrid-section table {
+  border: none;
+  border-collapse: collapse;
+}
+#myCalender .fc-theme-standard td {
+  border: none;
+}
+#myCalender .fc-scrollgrid-section-body .fc-daygrid-day {
+  border: 1px solid #e7eef5 !important;
+}
+
+/* カレンダーの各日付の背景色を変更する */
+#myCalender .fc .fc-day-other .fc-daygrid-day-frame {
+  background: #eee;
+}
+#myCalender .fc .fc-non-business {
+  background: transparent;
+}
+#myCalender .fc .fc-daygrid-day-frame {
+  background: white;
+}
+#myCalender .fc .fc-day-today .fc-daygrid-day-frame {
+  background: #f3f6f7;
+}
+
+/* カレンダーのセルのフォントサイズやカラーなどを調整する */
+#myCalender .fc .fc-col-header-cell-cushion {
+  font-size: 12px;
+  font-weight: normal;
+}
+
+#myCalender .fc .fc-daygrid-day-top {
+  display: flex;
+  justify-content: center;
+  line-height: 14px;
+  margin-bottom: 2px;
+}
+#myCalender .fc .holiday .fc-daygrid-day-top {
+  color: #f0302f;
+}
+#myCalender .fc .fc-day-sat .fc-daygrid-day-top,
+#myCalender .fc .fc-day-sat .fc-col-header-cell-cushion {
+  color: #2f7ef0;
+}
+#myCalender .fc .fc-day-sun .fc-daygrid-day-top,
+#myCalender .fc .fc-day-sun .fc-col-header-cell-cushion {
+  color: #37bfd2;
+}
+#myCalender .fc .fc-day-today .fc-daygrid-day-top {
+  background: #37bfd2 !important;
+  color: white !important;
+}
+#myCalender .fc-daygrid-day-number {
+  font-size: 10px;
+  font-weight: bold;
   padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: "helvetica", "sans-serif";
 }
-
-a {
-  color: inherit;
-  text-decoration: none;
+#myCalender .fc .fc-daygrid-day-frame::before {
+  content: none;
 }
-
-* {
-  box-sizing: border-box;
+#myCalender .fc-daygrid-day-bottom {
+  font-size: 10px;
+}
+#myCalender .fc-daygrid-block-event {
+  display: block;
+  margin: 0 0 2px;
+  padding: 0 2px;
+  border: none;
+  line-height: 12px;
+}
+#myCalender .fc-daygrid-dot-event {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  margin: 0 0 2px;
+  padding: 0;
+  line-height: 12px;
+  border-radius: 0;
+  background: none !important;
+  border: none !important;
+}
+#myCalender .fc-daygrid-dot-event .fc-event-main {
+  color: black !important;
+  border-radius: 0;
+}
+#myCalender .fc .fc-button .fc-icon {
+  color: #37bfd2;
 }
