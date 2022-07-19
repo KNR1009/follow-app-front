@@ -29,6 +29,10 @@ export const Home: React.FC = () => {
       router.push("/auth/signIn");
     }
   }, [Header.accessToken, router]);
+
+  const handleToPage = (path: string) => {
+    router.push(path);
+  };
   return (
     <>
       {Header.accessToken ? (
@@ -54,11 +58,21 @@ export const Home: React.FC = () => {
                     <p className="num">150</p>
                     <p className="label">posts</p>
                   </div>
-                  <div className="info">
+                  <div
+                    className="info"
+                    onClick={() => {
+                      handleToPage("/user/follower");
+                    }}
+                  >
                     <p className="num">32</p>
                     <p className="label">followers</p>
                   </div>
-                  <div className="info">
+                  <div
+                    className="info"
+                    onClick={() => {
+                      handleToPage("/user/following");
+                    }}
+                  >
                     <p className="num">310</p>
                     <p className="label">following</p>
                   </div>
